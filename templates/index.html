@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user %}
+        <form method="post" action="/result">
+            <input type="text" name="guess" placeholder="Enter your guess">
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>You have to login first before you play the game</p>
+        <form method="post" action="/login">
+            <input type="email" name="email" placeholder="Enter your email">
+            <br>
+
+            <button type="submit">Login</button>
+        </form>
+    {% endif %}
+{% endblock content %}

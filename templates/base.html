@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Guess the secret number{% endblock title %}</title>
+
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+
+    <body>
+        <h1>Guess the secret number</h1>
+
+        {% if not user %}
+            <p>You are not authenticated</p>
+        {% else %}
+            <p>
+                You are logged in as {{ user.email }}
+
+                <a href="/logout">Logout</a>
+            </p>
+        {% endif %}
+
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
